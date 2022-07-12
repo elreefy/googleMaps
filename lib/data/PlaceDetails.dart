@@ -16,7 +16,7 @@ class PlaceDetails {
     if (json['html_attributions'] != null) {
       _htmlAttributions = [];
       json['html_attributions'].forEach((v) {
-        _htmlAttributions?.add(Dynamic.fromJson(v));
+    //    _htmlAttributions?.add(Dynamic.fromJson(v));
       });
     }
     _result = json['result'] != null ? Result.fromJson(json['result']) : null;

@@ -1,15 +1,15 @@
 /// predictions : [{"description":"Pyramids Hill Road, Al Giza Desert, Egypt","matched_substrings":[{"length":8,"offset":0}],"place_id":"EilQeXJhbWlkcyBIaWxsIFJvYWQsIEFsIEdpemEgRGVzZXJ0LCBFZ3lwdCIuKiwKFAoSCUeUGbZJRVgUES5y6EbCjtNuEhQKEgnNJT_mfg5ZFBGmVRREg3PFBQ","reference":"EilQeXJhbWlkcyBIaWxsIFJvYWQsIEFsIEdpemEgRGVzZXJ0LCBFZ3lwdCIuKiwKFAoSCUeUGbZJRVgUES5y6EbCjtNuEhQKEgnNJT_mfg5ZFBGmVRREg3PFBQ","structured_formatting":{"main_text":"Pyramids Hill Road","main_text_matched_substrings":[{"length":8,"offset":0}],"secondary_text":"Al Giza Desert, Egypt"},"terms":[{"offset":0,"value":"Pyramids Hill Road"},{"offset":20,"value":"Al Giza Desert"},{"offset":36,"value":"Egypt"}],"types":["route","geocode"]}]
 /// status : "OK"
 
-class PlacesAutoComplete {
-  PlacesAutoComplete({
+class PlacesModel {
+  PlacesModel({
       List<Predictions>? predictions, 
       String? status,}){
     _predictions = predictions;
     _status = status;
 }
 
-  PlacesAutoComplete.fromJson(dynamic json) {
+  PlacesModel.fromJson(dynamic json) {
     if (json['predictions'] != null) {
       _predictions = [];
       json['predictions'].forEach((v) {
@@ -20,9 +20,9 @@ class PlacesAutoComplete {
   }
   List<Predictions>? _predictions;
   String? _status;
-PlacesAutoComplete copyWith({  List<Predictions>? predictions,
+PlacesModel copyWith({  List<Predictions>? predictions,
   String? status,
-}) => PlacesAutoComplete(  predictions: predictions ?? _predictions,
+}) => PlacesModel(  predictions: predictions ?? _predictions,
   status: status ?? _status,
 );
   List<Predictions>? get predictions => _predictions;
